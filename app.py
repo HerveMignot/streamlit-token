@@ -12,7 +12,7 @@ if 'token' in params:
 else:
     token_access = ''
 
-st.write("{} / {}".format(APP_TOKEN, token_access))
+# st.write("{} / {}".format(APP_TOKEN, token_access))
 
 if token_access == APP_TOKEN:
     with st.sidebar:
