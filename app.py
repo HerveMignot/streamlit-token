@@ -7,8 +7,10 @@ APP_TOKEN = os.environ.get('APP_TOKEN', str(random.randint(100, 1_000_000_000)))
 st.set_page_config(layout='wide')
 
 params = st.experimental_get_query_params()
-st.write(params)
-token_access = params.get('token', [''])[0]
+if 'token' in params:
+    token_access = params['token'][0]
+else:
+    token_access = ''
 
 if token_access == APP_TOKEN:
     with st.sidebar:
